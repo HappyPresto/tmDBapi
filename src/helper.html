@@ -1,0 +1,22 @@
+35:34
+
+var theMovieDBApiKey = "e5508ea1bc1c68bba86b598d4aea81c9"
+
+function getRequest(request) {
+    // return fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${theMovieDBApiKey}&language=en-US&page=1`) POPULAR
+    // return fetch(`https://api.themoviedb.org/3/search/movie?api_key=${theMovieDBApiKey}&language=en-US&query=${request}&page=1&include_adult=false`) SEARCH
+    // return fetch(`https://api.themoviedb.org/3/movie/${request}?api_key=${theMovieDBApiKey}`) // MOVIE DETAIL
+    // return fetch(`https://api.themoviedb.org/3/movie/${request}/recommendations?api_key=${theMovieDBApiKey}&language=en-US&page=1`) RECOMMENDATION
+    // return fetch(`https://api.themoviedb.org/3/movie/${request}/similar?api_key=${theMovieDBApiKey}&language=en-US&page=1`) SIMILAR
+    .then(function(res){
+        return res.json()
+    })
+    .then(function(data){
+        console.log(data)
+        return data
+    })
+}
+
+// getRequest("Fast and Furious") SEARCH
+// getRequest("384018") RECOMMENDATION // SIMILAR
+getRequest()
